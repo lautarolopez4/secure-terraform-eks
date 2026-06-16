@@ -1,0 +1,38 @@
+# --- Terraform state: NUNCA al repo (puede contener secretos en texto plano) ---
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# --- Cache de providers/módulos (pesado, se regenera con `terraform init`) ---
+.terraform/
+.terraform.tfstate.lock.info
+
+# --- Variables: pueden tener valores sensibles. Subí solo *.tfvars.example ---
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# --- Backend config (Opción B): datos de la cuenta. Subí solo el .example ---
+# OJO: ignoramos el archivo ESPECÍFICO, no *.hcl (eso se tragaría .terraform.lock.hcl)
+backend.hcl
+!backend.hcl.example
+
+# --- Logs de crash ---
+crash.log
+crash.*.log
+
+# --- Archivos de override locales ---
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# --- Config local de Terraform CLI ---
+.terraformrc
+terraform.rc
+
+# --- Prompt tutor / notas de trabajo, no van al repo público ---
+CLAUDE.MD
+
+# OJO: .terraform.lock.hcl SÍ se commitea (lock de versiones de providers).
+# Por eso NO lo ignoramos acá.

@@ -1,0 +1,4 @@
+# Copiá este archivo a terraform.tfvars y completá con tus valores.
+#   cp terraform.tfvars.example terraform.tfvars
+state_bucket_name = "tf-state-<TU_ACCOUNT_ID>"
+aws_profile       = "default"
